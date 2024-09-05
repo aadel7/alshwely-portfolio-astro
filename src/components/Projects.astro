@@ -1,40 +1,68 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
+import Solidity from "./icons/Solidity.astro"
 import NodeJS from "./icons/NodeJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import ReactJS from "./icons/ReactJS.astro"
+import HTML5 from "./icons/HTML5.astro"
+import CSS from "./icons/CSS.astro"
+import ExpressJS from "./icons/ExpressJS.astro"
+import Ganache from "./icons/Ganache.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  REACT: {
+    name: "React.JS",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: ReactJS,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  NODE: {
+    name: " Node.JS",
+    class: "bg-black text-white",
+    icon: NodeJS,
+  },
+  HTML5: {
+    name: " HTML5",
+    class: "bg-black text-white",
+    icon: HTML5,
+  },
+  CSS: {
+    name: " CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  EXPRESS: {
+    name: " Express.JS",
+    class: "bg-black text-white",
+    icon: ExpressJS,
+  },
+  GANACHE: {
+    name: " Ganache",
+    class: "bg-black text-white",
+    icon: Ganache,
+  },
+  SOLIDITY: {
+    name: " Solidity",
+    class: "bg-black text-white",
+    icon: Solidity,
   },
 }
 const PROJECTS = [
   {
     title: "Truck Tracking - Web 3 - Ethereum - DApp",
     description:
-      "TruckTracking is a decentralized application prototype (DApp) built on the Ethereum blockchain that enables tracking of trucks and their movements using Web3 technologies.",
+      "TruckTracking is a DApp prototype  built on the Ethereum blockchain (testnet) that enables tracking of trucks and their movements using Web3 technologies.",
     github: "https://github.com/aadel7/truck-tracking-web3-prototype",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "/projects/truck-tracking.png",
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.SOLIDITY, TAGS.GANACHE, TAGS.HTML5, TAGS.CSS],
   },
   {
     title: "First Portfolio Web",
     description:
-      "Using a mix of JS, React JS, React Bootstrap, Styled Components, HTML5, CSS and other stuff that I've found during my research and learning process",
+      "Using a mix of JS, React JS, React Bootstrap, Styled Components, HTML5, CSS and other stuff that I've found during my research and learning process.",
     github: "https://github.com/aadel7/alshwely-portfolio",
-    link: "https://github.com/aadel7/alshwely-portfolio",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "/projects/portfolio-first.png",
+    tags: [TAGS.NODE, TAGS.REACT, TAGS.HTML5, TAGS.CSS],
   },
 ]
 ---
@@ -45,7 +73,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="Project Img" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
