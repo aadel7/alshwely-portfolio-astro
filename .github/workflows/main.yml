@@ -1,4 +1,4 @@
-name: Deploy to SFTP
+name: Deploy to SCP
 
 on:
   push:
@@ -6,18 +6,19 @@ on:
       - main  # or the branch you want to deploy from
 
 jobs:
-  sftp-deploy:
+  scp-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Upload via SFTP
+      - name: Copy files via SCP
         uses: appleboy/scp-action@v0.1.1
         with:
-          host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USERNAME }}
+          key: ${{ secrets.SCP_PRIVATE_KEY }}
           source: "."
           target: "/portfolio"
+          port: 22
