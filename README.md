@@ -1,4 +1,6 @@
-# 👨🏻‍💻 Ali Al Shwely - Portfolio
+# 👨🏻 Ali Al Shwely - Portfolio
+
+
 
 ## 🙌 Thanks to Our Contributors
 

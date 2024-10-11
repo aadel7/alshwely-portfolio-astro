@@ -7,6 +7,7 @@ import HTML5 from "./icons/HTML5.astro"
 import CSS from "./icons/CSS.astro"
 import ExpressJS from "./icons/ExpressJS.astro"
 import Ganache from "./icons/Ganache.astro"
+import Python from "./icons/Python.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -46,8 +47,21 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Solidity,
   },
+  PYTHON: {
+    name: " Python",
+    class: "bg-black text-white",
+    icon: Python,
+  },
 }
 const PROJECTS = [
+  {
+    title: "Breast Cancer Machine Learning models evaluation.",
+    description:
+      "Breast Cancel Machine Learning Models Evaluation using public dataset and different ML models such as Logistic Regression or Random Forest.",
+    github: "https://github.com/aadel7/breast-cancer-ml-model",
+    image: "/projects/breast-ml-model.png",
+    tags: [TAGS.PYTHON],
+  },
   {
     title: "Truck Tracking - Web 3 - Ethereum - DApp",
     description:
