@@ -3,23 +3,21 @@ name: SFTP Deploy
 on:
   push:
     branches:
-      - main  # Adjust if you're using a different branch
+      - main
 
 jobs:
-  sftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Upload via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        uses: appleboy/scp-action@v0.1.4
         with:
-          server: access865430027.webspace-data.io
-          username: ${{ secrets.SFTP_USERNAME }}
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
-          port: 22  # Default SFTP port
-          local-dir: ./  # Directory to upload (change this to your build or root folder)
-          server-dir: /portfolio  # Folder where the files should be uploaded on the server
+          port: 22
+          source: "./"
+          target: "/portfolio/"
