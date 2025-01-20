@@ -27,44 +27,40 @@ const { description, title } = Astro.props
 
   <body class="relative text-black dark:text-white">
     <div
-      class="absolute inset-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    class="absolute inset-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
+    bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] 
+    dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
+ 
     <Header />
     <slot />
     <Footer />
     <style is:global>
       :root {
         color-scheme: light dark;
-        --vh: 100%; /* Default fallback */
       }
 
       html {
         font-family: "Onest Variable", system-ui, sans-serif;
         scroll-behavior: smooth;
-        height: calc(var(--vh, 1vh) * 100); /* Dynamic height */
       }
 
       body {
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+      background-position: center;
+      background-repeat: no-repeat;
         color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
-        min-height: calc(var(--vh, 1vh) * 100);
+        min-height: 100vh;
         overscroll-behavior: none;
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        overflow-x: hidden;
       }
 
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+          
         }
       }
 
@@ -73,6 +69,13 @@ const { description, title } = Astro.props
           color: rgba(255, 255, 255, 0.9);
         }
       }
+
+      html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+      }
+
 
       #header-nav {
         animation: blur linear both 0.5s;
@@ -122,29 +125,11 @@ const { description, title } = Astro.props
 
       @media only screen and (max-width: 768px) {
         body {
-          background-size: cover;
-          background-position: center;
+            background-size: cover;
+            background-position: center;
         }
       }
 
-      @supports (-webkit-touch-callout: none) {
-        html, body {
-          height: -webkit-fill-available; /* Safari-specific fix */
-        }
-
-        .absolute {
-          height: -webkit-fill-available;
-        }
-      }
     </style>
-    <script>
-      // JavaScript for fixing mobile viewport height
-      function updateVh() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      }
-      updateVh();
-      window.addEventListener('resize', updateVh);
-    </script>
   </body>
 </html>
