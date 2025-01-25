@@ -18,37 +18,37 @@ const TAGS = {
     icon: ReactJS,
   },
   NODE: {
-    name: " Node.JS",
+    name: "Node.JS",
     class: "bg-black text-white",
     icon: NodeJS,
   },
   HTML5: {
-    name: " HTML5",
+    name: "HTML5",
     class: "bg-black text-white",
     icon: HTML5,
   },
   CSS: {
-    name: " CSS",
+    name: "CSS",
     class: "bg-black text-white",
     icon: CSS,
   },
   EXPRESS: {
-    name: " Express.JS",
+    name: "Express.JS",
     class: "bg-black text-white",
     icon: ExpressJS,
   },
   GANACHE: {
-    name: " Ganache",
+    name: "Ganache",
     class: "bg-black text-white",
     icon: Ganache,
   },
   SOLIDITY: {
-    name: " Solidity",
+    name: "Solidity",
     class: "bg-black text-white",
     icon: Solidity,
   },
   PYTHON: {
-    name: " Python",
+    name: "Python",
     class: "bg-black text-white",
     icon: Python,
   },
@@ -100,9 +100,9 @@ const PROJECTS = [
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex rounded-full text-xs ${tag.class} py-1 px-2 `}
               >
-                <tag.icon class="size-4" />
+                <tag.icon class="size-2" />
                 {tag.name}
               </span>
             </li>
